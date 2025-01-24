@@ -2,7 +2,9 @@ import { Search, User, ShoppingCart, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,DropdownMenuItem,
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -30,7 +32,8 @@ const Header = () => {
                 <Button variant="ghost" className="flex items-center gap-2 text-white hover:text-white/90">
                   <MapPin className="h-5 w-5" />
                   <div className="text-left hidden sm:block">
-                    <p className="text-xs text-neutral"><p className="text-sm font-medium">Selecione o endereço</p>
+                    <p className="text-xs text-neutral">Enviar para</p>
+                    <p className="text-sm font-medium">Selecione o endereço</p>
                   </div>
                 </Button>
               </DropdownMenuTrigger>
