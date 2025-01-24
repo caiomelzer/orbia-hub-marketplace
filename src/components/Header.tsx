@@ -10,7 +10,7 @@ import {
 
 const Header = () => {
   return (
-    <header className="bg-[rgb(0,55,75)] shadow-md">
+    <header className="bg-[#00374b] shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-white">Orbia</div>
