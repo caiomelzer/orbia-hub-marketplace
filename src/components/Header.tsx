@@ -2,18 +2,16 @@ import { Search, User, ShoppingCart, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
+  DropdownMenu,DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-[rgb(0,55,75)] shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">Orbia</div>
+          <div className="text-2xl font-bold text-white">Orbia</div>
           
           <div className="flex-1 max-w-xl mx-8">
             <div className="relative">
@@ -29,11 +27,10 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-2">
+                <Button variant="ghost" className="flex items-center gap-2 text-white hover:text-white/90">
                   <MapPin className="h-5 w-5" />
                   <div className="text-left hidden sm:block">
-                    <p className="text-xs text-neutral-dark">Enviar para</p>
-                    <p className="text-sm font-medium">Selecione o endereço</p>
+                    <p className="text-xs text-neutral"><p className="text-sm font-medium">Selecione o endereço</p>
                   </div>
                 </Button>
               </DropdownMenuTrigger>
@@ -47,12 +44,12 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" className="flex items-center gap-2">
+            <Button variant="ghost" className="flex items-center gap-2 text-white hover:text-white/90">
               <User className="h-5 w-5" />
               <span>Entrar</span>
             </Button>
 
-            <Button variant="ghost" className="relative">
+            <Button variant="ghost" className="relative text-white hover:text-white/90">
               <ShoppingCart className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 0
