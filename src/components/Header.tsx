@@ -1,6 +1,12 @@
-import { Search, User, ShoppingCart } from "lucide-react";
+import { Search, User, ShoppingCart, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -21,12 +27,36 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5" />
+                  <div className="text-left hidden sm:block">
+                    <p className="text-xs text-neutral-dark">Enviar para</p>
+                    <p className="text-sm font-medium">Selecione o endereço</p>
+                  </div>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[300px] bg-white">
+                <DropdownMenuItem>
+                  <div className="flex flex-col">
+                    <span className="font-medium">Adicionar endereço</span>
+                    <span className="text-sm text-neutral-dark">Cadastre um novo endereço de entrega</span>
+                  </div>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button variant="ghost" className="flex items-center gap-2">
               <User className="h-5 w-5" />
               <span>Entrar</span>
             </Button>
-            <Button variant="ghost">
+
+            <Button variant="ghost" className="relative">
               <ShoppingCart className="h-5 w-5" />
+              <span className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                0
+              </span>
             </Button>
           </div>
         </div>
