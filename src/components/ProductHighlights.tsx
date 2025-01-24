@@ -26,13 +26,37 @@ const products = [
     price: "R$ 399,90",
     image: "/placeholder.svg",
   },
+  {
+    id: 5,
+    name: "Adubo Orgânico",
+    price: "R$ 89,90",
+    image: "/placeholder.svg",
+  },
+  {
+    id: 6,
+    name: "Inseticida Natural",
+    price: "R$ 129,90",
+    image: "/placeholder.svg",
+  },
+  {
+    id: 7,
+    name: "Substrato Premium",
+    price: "R$ 79,90",
+    image: "/placeholder.svg",
+  },
+  {
+    id: 8,
+    name: "Kit Ferramentas",
+    price: "R$ 249,90",
+    image: "/placeholder.svg",
+  },
 ];
 
 const ProductHighlights = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Produtos em Destaque</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-primary">Produtos em Destaque</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <Card key={product.id} className="group hover:shadow-lg transition-shadow">
