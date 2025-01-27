@@ -10,6 +10,10 @@ const getDefaultLanguage = () => {
   if (hostname.startsWith('argentina.')) {
     return 'es-AR';
   }
+  // Treat localhost as brazil subdomain
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return 'pt-BR';
+  }
   return 'pt-BR';
 };
 
