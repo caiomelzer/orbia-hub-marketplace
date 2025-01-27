@@ -53,12 +53,14 @@ const products = [
 ];
 
 const ProductHighlights = () => {
+  const displayProducts = window.innerWidth < 768 ? products.slice(0, 3) : products;
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center text-primary">Produtos em Destaque</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
+          {displayProducts.map((product) => (
             <Card key={product.id} className="group hover:shadow-lg transition-shadow">
               <CardContent className="p-4">
                 <div className="aspect-square rounded-lg overflow-hidden bg-neutral mb-4">

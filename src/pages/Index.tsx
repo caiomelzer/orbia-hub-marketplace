@@ -4,6 +4,7 @@ import ProductHighlights from "@/components/ProductHighlights";
 import LoyaltyBenefits from "@/components/LoyaltyBenefits";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import AdditionalBanners from "@/components/AdditionalBanners";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
         <ProductHighlights />
         <LoyaltyBenefits />
         <FAQ />
+        <AdditionalBanners />
       </main>
       <Footer />
     </div>

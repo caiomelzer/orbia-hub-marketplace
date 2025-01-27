@@ -1,4 +1,4 @@
-import { Search, User, ShoppingCart, MapPin } from "lucide-react";
+import { Search, User, ShoppingCart, MapPin, Menu } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,16 +7,19 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useState } from "react";
 
 const Header = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
   return (
     <header className="bg-[#00374b] shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-white">Orbia</div>
           
-          <div className="flex-1 max-w-xl mx-4">
-            <div className="relative">
+          <div className="hidden md:flex flex-1 max-w-xl mx-4">
+            <div className="relative w-full">
               <Input
                 type="search"
                 placeholder="Busque produtos agrícolas..."
@@ -27,6 +30,14 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            <Button
+              variant="ghost"
+              className="md:hidden text-white"
+              onClick={() => setIsSearchVisible(!isSearchVisible)}
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-2 text-white hover:text-white/90">
@@ -49,7 +60,7 @@ const Header = () => {
 
             <Button variant="ghost" className="flex items-center gap-2 text-white hover:text-white/90">
               <User className="h-5 w-5" />
-              <span>Entrar</span>
+              <span className="hidden sm:inline">Entrar</span>
             </Button>
 
             <Button variant="ghost" className="relative text-white hover:text-white/90">
@@ -60,6 +71,20 @@ const Header = () => {
             </Button>
           </div>
         </div>
+
+        {/* Mobile Search Bar */}
+        {isSearchVisible && (
+          <div className="md:hidden mt-4 animate-slideIn">
+            <div className="relative">
+              <Input
+                type="search"
+                placeholder="Busque produtos agrícolas..."
+                className="w-full pl-10"
+              />
+              <Search className="absolute left-3 top-2.5 h-5 w-5 text-neutral-dark" />
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
