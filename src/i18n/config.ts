@@ -5,16 +5,37 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import ptBR from './locales/pt-BR.json';
 import esAR from './locales/es-AR.json';
 
-const getDefaultLanguage = () => {
+export const getCountryFromHostname = () => {
   const hostname = window.location.hostname;
-  if (hostname.startsWith('argentina.')) {
-    return 'es-AR';
-  }
-  // Treat localhost as brazil subdomain
+  
+  // Map de subdomínios para países
+  const countryMap: Record<string, string> = {
+    'argentina': 'AR',
+    'brasil': 'BR',
+    // Adicione mais países aqui conforme necessário
+  };
+
+  // Para desenvolvimento local, usar Brasil como padrão
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return 'pt-BR';
+    return 'BR';
   }
-  return 'pt-BR';
+
+  // Extrair o subdomínio
+  const subdomain = hostname.split('.')[0];
+  return countryMap[subdomain] || 'BR'; // BR como fallback
+};
+
+export const getDefaultLanguage = () => {
+  const country = getCountryFromHostname();
+  
+  // Map de países para idiomas
+  const languageMap: Record<string, string> = {
+    'AR': 'es-AR',
+    'BR': 'pt-BR',
+    // Adicione mais idiomas aqui conforme necessário
+  };
+
+  return languageMap[country] || 'pt-BR';
 };
 
 i18n

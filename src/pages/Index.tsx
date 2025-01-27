@@ -7,11 +7,15 @@ import Footer from "@/components/Footer";
 import AdditionalBanners from "@/components/AdditionalBanners";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/hooks/useAuth";
+import { getCountryFromHostname } from "@/i18n/config";
 
 const Index = () => {
   const { i18n } = useTranslation();
-  const isArgentina = i18n.language === 'es-AR';
+  const country = getCountryFromHostname();
   const { isAuthenticated } = useAuth();
+
+  // Componentes específicos por país
+  const shouldShowFAQ = country === 'BR';
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -20,7 +24,7 @@ const Index = () => {
         <Banner />
         {isAuthenticated && <ProductHighlights />}
         <LoyaltyBenefits />
-        {!isArgentina && <FAQ />}
+        {shouldShowFAQ && <FAQ />}
         <AdditionalBanners />
       </main>
       <Footer />
