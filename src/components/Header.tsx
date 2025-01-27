@@ -9,10 +9,30 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@/hooks/useAuth";
+import { useToast } from "@/components/ui/use-toast";
 
 const Header = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const { t } = useTranslation();
+  const { isAuthenticated, login, logout } = useAuth();
+  const { toast } = useToast();
+
+  const handleAuthAction = () => {
+    if (isAuthenticated) {
+      logout();
+      toast({
+        title: t('header.logoutSuccess'),
+        description: t('header.logoutMessage'),
+      });
+    } else {
+      login();
+      toast({
+        title: t('header.loginSuccess'),
+        description: t('header.loginMessage'),
+      });
+    }
+  };
 
   return (
     <header className="bg-[#00374b] shadow-md">
@@ -60,9 +80,15 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" className="flex items-center gap-2 text-white hover:text-white/90">
+            <Button 
+              variant="ghost" 
+              className="flex items-center gap-2 text-white hover:text-white/90"
+              onClick={handleAuthAction}
+            >
               <User className="h-5 w-5" />
-              <span className="hidden sm:inline">{t('header.login')}</span>
+              <span className="hidden sm:inline">
+                {isAuthenticated ? t('header.logout') : t('header.login')}
+              </span>
             </Button>
 
             <Button variant="ghost" className="relative text-white hover:text-white/90">
