@@ -142,7 +142,7 @@ const Header = () => {
           )}
         </div>
       </header>
-      <nav className="bg-[#004c66] text-white py-2">
+      <nav className="bg-[#004c66] text-white py-2 relative">
         <div className="container mx-auto px-4">
           <NavigationMenu>
             <NavigationMenuList>
@@ -150,21 +150,28 @@ const Header = () => {
                 <NavigationMenuTrigger className="text-white hover:text-[#8bb8c8] transition-colors">
                   {t('nav.product1')}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-2 p-4 bg-white">
-                    {categories['nav.product1'].map((item) => (
-                      <li key={item.href}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to={item.href}
-                            className="block p-2 hover:bg-slate-100 rounded"
-                          >
-                            {item.title}
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
+                <NavigationMenuContent className="absolute left-0 w-screen">
+                  <div className="w-full bg-white">
+                    <div className="container mx-auto py-8 px-4">
+                      <ul className="grid grid-cols-3 gap-8">
+                        {categories['nav.product1'].map((item) => (
+                          <li key={item.href} className="group">
+                            <NavigationMenuLink asChild>
+                              <Link
+                                to={item.href}
+                                className="block p-4 hover:bg-slate-50 rounded-lg transition-colors"
+                              >
+                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                                <p className="text-sm text-gray-600">
+                                  Explore nossa linha completa de {item.title.toLowerCase()}
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
@@ -172,21 +179,28 @@ const Header = () => {
                 <NavigationMenuTrigger className="text-white hover:text-[#8bb8c8] transition-colors">
                   {t('nav.product2')}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-2 p-4 bg-white">
-                    {categories['nav.product2'].map((item) => (
-                      <li key={item.href}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to={item.href}
-                            className="block p-2 hover:bg-slate-100 rounded"
-                          >
-                            {item.title}
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
+                <NavigationMenuContent className="absolute left-0 w-screen">
+                  <div className="w-full bg-white">
+                    <div className="container mx-auto py-8 px-4">
+                      <ul className="grid grid-cols-3 gap-8">
+                        {categories['nav.product2'].map((item) => (
+                          <li key={item.href} className="group">
+                            <NavigationMenuLink asChild>
+                              <Link
+                                to={item.href}
+                                className="block p-4 hover:bg-slate-50 rounded-lg transition-colors"
+                              >
+                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                                <p className="text-sm text-gray-600">
+                                  Conheça nossos {item.title.toLowerCase()} de alta performance
+                                </p>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
@@ -195,21 +209,28 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-white hover:text-[#8bb8c8] transition-colors">
                     {t('nav.product3')}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-2 p-4 bg-white">
-                      {categories['nav.product3'].map((item) => (
-                        <li key={item.href}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={item.href}
-                              className="block p-2 hover:bg-slate-100 rounded"
-                            >
-                              {item.title}
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
+                  <NavigationMenuContent className="absolute left-0 w-screen">
+                    <div className="w-full bg-white">
+                      <div className="container mx-auto py-8 px-4">
+                        <ul className="grid grid-cols-3 gap-8">
+                          {categories['nav.product3'].map((item) => (
+                            <li key={item.href} className="group">
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  to={item.href}
+                                  className="block p-4 hover:bg-slate-50 rounded-lg transition-colors"
+                                >
+                                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                                  <p className="text-sm text-gray-600">
+                                    Produtos premium exclusivos para clientes
+                                  </p>
+                                </Link>
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               )}
