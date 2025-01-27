@@ -7,6 +7,14 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/hooks/useAuth";
@@ -33,6 +41,24 @@ const Header = () => {
         description: t('header.loginMessage'),
       });
     }
+  };
+
+  const categories = {
+    'nav.product1': [
+      { title: 'Nitrogenados', href: '/product/1/nitrogenados' },
+      { title: 'Fosfatados', href: '/product/1/fosfatados' },
+      { title: 'Potássicos', href: '/product/1/potassicos' },
+    ],
+    'nav.product2': [
+      { title: 'Herbicidas', href: '/product/2/herbicidas' },
+      { title: 'Fungicidas', href: '/product/2/fungicidas' },
+      { title: 'Inseticidas', href: '/product/2/inseticidas' },
+    ],
+    'nav.product3': [
+      { title: 'Premium A', href: '/product/3/premium-a' },
+      { title: 'Premium B', href: '/product/3/premium-b' },
+      { title: 'Premium C', href: '/product/3/premium-c' },
+    ],
   };
 
   return (
@@ -118,27 +144,84 @@ const Header = () => {
       </header>
       <nav className="bg-[#004c66] text-white py-2">
         <div className="container mx-auto px-4">
-          <ul className="flex gap-6">
-            <li>
-              <Link to="/product/1" className="hover:text-[#8bb8c8] transition-colors">
-                {t('nav.product1')}
-              </Link>
-            </li>
-            <li>
-              <Link to="/product/2" className="hover:text-[#8bb8c8] transition-colors">
-                {t('nav.product2')}
-              </Link>
-            </li>
-            {isAuthenticated && (
-              <li>
-                <Link to="/product/3" className="hover:text-[#8bb8c8] transition-colors">
-                  {t('nav.product3')}
-                </Link>
-              </li>
-            )}
-          </ul>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-[#8bb8c8] transition-colors">
+                  {t('nav.product1')}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-2 p-4 bg-white">
+                    {categories['nav.product1'].map((item) => (
+                      <li key={item.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to={item.href}
+                            className="block p-2 hover:bg-slate-100 rounded"
+                          >
+                            {item.title}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-white hover:text-[#8bb8c8] transition-colors">
+                  {t('nav.product2')}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-2 p-4 bg-white">
+                    {categories['nav.product2'].map((item) => (
+                      <li key={item.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to={item.href}
+                            className="block p-2 hover:bg-slate-100 rounded"
+                          >
+                            {item.title}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {isAuthenticated && (
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white hover:text-[#8bb8c8] transition-colors">
+                    {t('nav.product3')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-2 p-4 bg-white">
+                      {categories['nav.product3'].map((item) => (
+                        <li key={item.href}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.href}
+                              className="block p-2 hover:bg-slate-100 rounded"
+                            >
+                              {item.title}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </nav>
+      <div className="bg-yellow-50 text-yellow-800 py-2">
+        <div className="container mx-auto px-4 text-sm text-center">
+          {t('disclaimer.text', 'Atenção: Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de privacidade.')}
+        </div>
+      </div>
     </>
   );
 };
