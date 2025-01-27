@@ -1,65 +1,29 @@
 {
   "header": {
-    "search": "Buscar productos agrícolas...",
+    "search": "Buscar productos...",
     "sendTo": "Enviar a",
     "selectAddress": "Seleccionar dirección",
     "addAddress": "Agregar dirección",
-    "newAddress": "Registre una nueva dirección de entrega",
-    "login": "Ingresar",
-    "cart": "Carrito"
+    "newAddress": "Registrar nueva dirección",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "loginSuccess": "Inicio de sesión exitoso",
+    "loginMessage": "¡Bienvenido de vuelta!",
+    "logoutSuccess": "Cierre de sesión exitoso",
+    "logoutMessage": "¡Hasta luego!"
   },
-  "banner": {
-    "title1": "Productos para tu Cosecha",
-    "description1": "Las mejores soluciones para el agronegocio",
-    "title2": "Programa de Fidelidad",
-    "description2": "Acumula puntos en tus compras",
-    "learnMore": "Saber más"
+  "nav": {
+    "product1": "Fertilizantes",
+    "product2": "Defensivos",
+    "product3": "Productos Premium"
+  },
+  "product": {
+    "details": "Detalles del Producto",
+    "id": "ID del Producto"
   },
   "products": {
-    "title": "Productos Destacados",
-    "addToCart": "Agregar al Carrito"
-  },
-  "loyalty": {
-    "title": "Programa de Fidelidad Orbia",
-    "benefit1": {
-      "title": "Puntos Dobles",
-      "description": "Acumula puntos dobles en tus primeras compras"
-    },
-    "benefit2": {
-      "title": "Descuentos Exclusivos",
-      "description": "Aprovecha descuentos especiales para miembros"
-    },
-    "benefit3": {
-      "title": "Soporte Prioritario",
-      "description": "Atención especializada para tus necesidades"
-    }
-  },
-  "footer": {
-    "about": {
-      "title": "Sobre Orbia",
-      "whoWeAre": "Quiénes Somos",
-      "ourHistory": "Nuestra Historia",
-      "workWithUs": "Trabaja con Nosotros"
-    },
-    "products": {
-      "title": "Productos",
-      "fertilizers": "Fertilizantes",
-      "defensives": "Defensivos",
-      "seeds": "Semillas",
-      "equipment": "Equipos"
-    },
-    "loyalty": {
-      "title": "Fidelidad",
-      "howItWorks": "Cómo Funciona",
-      "benefits": "Beneficios",
-      "terms": "Términos"
-    },
-    "contact": {
-      "title": "Contacto",
-      "talkToUs": "Contáctanos",
-      "customerService": "Atención al Cliente",
-      "ombudsman": "Defensor del Cliente"
-    },
-    "copyright": "© 2024 Orbia. Todos los derechos reservados."
+    "highlights": "Productos Destacados",
+    "addToCart": "Agregar al Carrito",
+    "error": "Error al cargar productos"
   }
 }
