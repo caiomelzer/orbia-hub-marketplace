@@ -5,8 +5,12 @@ import LoyaltyBenefits from "@/components/LoyaltyBenefits";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import AdditionalBanners from "@/components/AdditionalBanners";
+import { useTranslation } from "react-i18next";
 
 const Index = () => {
+  const { i18n } = useTranslation();
+  const isArgentina = i18n.language === 'es-AR';
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -14,7 +18,7 @@ const Index = () => {
         <Banner />
         <ProductHighlights />
         <LoyaltyBenefits />
-        <FAQ />
+        {!isArgentina && <FAQ />}
         <AdditionalBanners />
       </main>
       <Footer />

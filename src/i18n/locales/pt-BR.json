@@ -1,0 +1,68 @@
+{
+  "header": {
+    "search": "Busque produtos agrícolas...",
+    "sendTo": "Enviar para",
+    "selectAddress": "Selecione o endereço",
+    "addAddress": "Adicionar endereço",
+    "newAddress": "Cadastre um novo endereço de entrega",
+    "login": "Entrar",
+    "cart": "Carrinho"
+  },
+  "banner": {
+    "title1": "Produtos para sua Safra",
+    "description1": "As melhores soluções para o agronegócio",
+    "title2": "Programa de Fidelidade",
+    "description2": "Acumule pontos em suas compras",
+    "learnMore": "Saiba mais"
+  },
+  "products": {
+    "title": "Produtos em Destaque",
+    "addToCart": "Adicionar ao Carrinho"
+  },
+  "loyalty": {
+    "title": "Programa de Fidelidade Orbia",
+    "benefit1": {
+      "title": "Pontos em Dobro",
+      "description": "Acumule pontos em dobro nas primeiras compras"
+    },
+    "benefit2": {
+      "title": "Descontos Exclusivos",
+      "description": "Aproveite descontos especiais para membros"
+    },
+    "benefit3": {
+      "title": "Suporte Prioritário",
+      "description": "Atendimento especializado para suas necessidades"
+    }
+  },
+  "faq": {
+    "title": "Perguntas Frequentes"
+  },
+  "footer": {
+    "about": {
+      "title": "Sobre a Orbia",
+      "whoWeAre": "Quem Somos",
+      "ourHistory": "Nossa História",
+      "workWithUs": "Trabalhe Conosco"
+    },
+    "products": {
+      "title": "Produtos",
+      "fertilizers": "Fertilizantes",
+      "defensives": "Defensivos",
+      "seeds": "Sementes",
+      "equipment": "Equipamentos"
+    },
+    "loyalty": {
+      "title": "Fidelidade",
+      "howItWorks": "Como Funciona",
+      "benefits": "Vantagens",
+      "terms": "Regulamento"
+    },
+    "contact": {
+      "title": "Contato",
+      "talkToUs": "Fale Conosco",
+      "customerService": "SAC",
+      "ombudsman": "Ouvidoria"
+    },
+    "copyright": "© 2024 Orbia. Todos os direitos reservados."
+  }
+}
