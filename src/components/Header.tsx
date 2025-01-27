@@ -151,25 +151,22 @@ const Header = () => {
                   {t('nav.product1')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="absolute left-0 w-screen">
-                  <div className="w-full bg-white">
-                    <div className="container mx-auto py-8 px-4">
-                      <ul className="grid grid-cols-3 gap-8">
+                  <div className="w-full bg-white shadow-lg">
+                    <div className="container mx-auto py-8">
+                      <div className="grid grid-cols-3 gap-8">
                         {categories['nav.product1'].map((item) => (
-                          <li key={item.href} className="group">
-                            <NavigationMenuLink asChild>
-                              <Link
-                                to={item.href}
-                                className="block p-4 hover:bg-slate-50 rounded-lg transition-colors"
-                              >
-                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                                <p className="text-sm text-gray-600">
-                                  Explore nossa linha completa de {item.title.toLowerCase()}
-                                </p>
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
+                          <Link
+                            key={item.href}
+                            to={item.href}
+                            className="block p-6 rounded-lg hover:bg-slate-50 transition-colors"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+                            <p className="text-sm text-gray-600">
+                              Explore nossa linha completa de {item.title.toLowerCase()}
+                            </p>
+                          </Link>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -180,25 +177,22 @@ const Header = () => {
                   {t('nav.product2')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="absolute left-0 w-screen">
-                  <div className="w-full bg-white">
-                    <div className="container mx-auto py-8 px-4">
-                      <ul className="grid grid-cols-3 gap-8">
+                  <div className="w-full bg-white shadow-lg">
+                    <div className="container mx-auto py-8">
+                      <div className="grid grid-cols-3 gap-8">
                         {categories['nav.product2'].map((item) => (
-                          <li key={item.href} className="group">
-                            <NavigationMenuLink asChild>
-                              <Link
-                                to={item.href}
-                                className="block p-4 hover:bg-slate-50 rounded-lg transition-colors"
-                              >
-                                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                                <p className="text-sm text-gray-600">
-                                  Conheça nossos {item.title.toLowerCase()} de alta performance
-                                </p>
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
+                          <Link
+                            key={item.href}
+                            to={item.href}
+                            className="block p-6 rounded-lg hover:bg-slate-50 transition-colors"
+                          >
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+                            <p className="text-sm text-gray-600">
+                              Conheça nossos {item.title.toLowerCase()} de alta performance
+                            </p>
+                          </Link>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </NavigationMenuContent>
@@ -210,25 +204,22 @@ const Header = () => {
                     {t('nav.product3')}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="absolute left-0 w-screen">
-                    <div className="w-full bg-white">
-                      <div className="container mx-auto py-8 px-4">
-                        <ul className="grid grid-cols-3 gap-8">
+                    <div className="w-full bg-white shadow-lg">
+                      <div className="container mx-auto py-8">
+                        <div className="grid grid-cols-3 gap-8">
                           {categories['nav.product3'].map((item) => (
-                            <li key={item.href} className="group">
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  to={item.href}
-                                  className="block p-4 hover:bg-slate-50 rounded-lg transition-colors"
-                                >
-                                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                                  <p className="text-sm text-gray-600">
-                                    Produtos premium exclusivos para clientes
-                                  </p>
-                                </Link>
-                              </NavigationMenuLink>
-                            </li>
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              className="block p-6 rounded-lg hover:bg-slate-50 transition-colors"
+                            >
+                              <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+                              <p className="text-sm text-gray-600">
+                                Produtos premium exclusivos para clientes
+                              </p>
+                            </Link>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     </div>
                   </NavigationMenuContent>
