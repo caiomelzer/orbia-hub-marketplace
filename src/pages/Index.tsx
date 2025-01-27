@@ -8,11 +8,33 @@ import AdditionalBanners from "@/components/AdditionalBanners";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/hooks/useAuth";
 import { getCountryFromHostname } from "@/i18n/config";
+import { useEffect } from "react";
+import { toast } from "sonner";
+import { getCookie, setCookie } from "@/utils/cookieUtils";
 
 const Index = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const country = getCountryFromHostname();
   const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    const hasAcceptedCookies = getCookie('cookiesAccepted');
+    
+    if (!hasAcceptedCookies) {
+      toast("Política de Cookies", {
+        description: t('cookies.message', 'Este site utiliza cookies para melhorar sua experiência.'),
+        action: {
+          label: t('cookies.accept', 'Aceitar'),
+          onClick: () => {
+            setCookie('cookiesAccepted', 'true', 365);
+          },
+        },
+        duration: Infinity,
+        position: "bottom-center",
+        className: "bg-white border border-gray-200 shadow-lg",
+      });
+    }
+  }, [t]);
 
   // Componentes específicos por país
   const shouldShowFAQ = country === 'BR';
