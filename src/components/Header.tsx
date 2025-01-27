@@ -15,7 +15,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-white">Orbia</div>
           
-          <div className="flex-1 max-w-xl mx-8">
+          <div className="flex-1 max-w-xl mx-4">
             <div className="relative">
               <Input
                 type="search"
@@ -54,7 +54,7 @@ const Header = () => {
 
             <Button variant="ghost" className="relative text-white hover:text-white/90">
               <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-[#8bb8c8] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 0
               </span>
             </Button>
