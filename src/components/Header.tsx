@@ -1,4 +1,4 @@
-import { Search, User, ShoppingCart, MapPin } from "lucide-react";
+import { Search, User, ShoppingCart, MapPin, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +23,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
   const { t } = useTranslation();
   const { isAuthenticated, login, logout } = useAuth();
   const { toast } = useToast();
@@ -229,11 +230,20 @@ const Header = () => {
           </NavigationMenu>
         </div>
       </nav>
-      <div className="bg-yellow-50 text-yellow-800 py-2">
-        <div className="container mx-auto px-4 text-sm text-center">
-          {t('disclaimer.text', 'Atenção: Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de privacidade.')}
+      {showDisclaimer && (
+        <div className="bg-yellow-50 text-yellow-800 py-2 relative">
+          <div className="container mx-auto px-4 text-sm text-center">
+            {t('disclaimer.text', 'Atenção: Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de privacidade.')}
+            <button
+              onClick={() => setShowDisclaimer(false)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-yellow-100 rounded-full transition-colors"
+              aria-label="Fechar aviso"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
